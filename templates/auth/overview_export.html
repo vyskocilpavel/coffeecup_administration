@@ -1,0 +1,44 @@
+{% extends "base_export.html" %}
+
+{% block content %}
+    <h1>Overview Export - {{ month }}/{{ year }}</h1>
+    <h2>Total count - {{ results['total_count'] }}</h2>
+
+    <h2>Organization stats</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Organization </th>
+                <th> Count </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for org, count in results['org_stats'].items() %}
+            <tr>
+                <td>{{ org }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Users stats</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> User </th>
+                <th> Organization </th>
+                <th> Count </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id, user_record in results['user_stats'].items() %}
+            <tr>
+                <td>{{ user_record.name }}</td>
+                <td>{{ user_record.organization }}</td>
+                <td>{{ user_record.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

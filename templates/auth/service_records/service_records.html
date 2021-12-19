@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <h1>List of all Service records</h1>
+
+    {{ wtf.quick_form(month_form, id="month_filter_form", button_map={'submit': 'primary', 'export': 'primary'}) }}
+
+    <div class="float-end">
+        <a class="btn btn-primary width-20 mt-5" href={{ url_for('auth_service_record_create') }}>Add new record</a>
+    </div>
+    {{ table }}
+
+{% endblock %}

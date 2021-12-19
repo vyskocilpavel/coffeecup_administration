@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <div class="container-fluid px-0">
+        <div class="d-flex justify-content-around w-100" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a href="{{ url_for('auth_overview') }}">OVERVIEW</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a href="{{ url_for('auth_records') }}">COFFEE RECORDS</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a href="{{ url_for('auth_service_records') }}">SERVICE RECORDS</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a href="{{ url_for('auth_users') }}">USERS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

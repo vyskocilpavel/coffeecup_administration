@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <h1>Overview</h1>
+    <div>
+        {{ wtf.quick_form(month_form, id="month_filter_form", button_map={'submit': 'primary', 'export': 'primary'}) }}
+    </div>
+
+    <div class="mt-2">
+        <h2>Total count: {{ total_count }}</h2>
+        <p></p>
+    </div>
+
+    <div class="mt-4">
+        <h2>Organization stats</h2>
+        {{ org_stats_table }}
+    </div>
+    <div class="mt-4">
+        <h2>Users stats</h2>
+        {{ user_stats_table }}
+    </div>
+
+{% endblock %}

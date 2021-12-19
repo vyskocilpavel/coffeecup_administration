@@ -1,0 +1,27 @@
+{% extends "base_export.html" %}
+
+{% block content %}
+    <h1>All Service records - {{ month }}/{{ year }}</h1>
+    <h2></h2>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Date </th>
+                <th> Description </th>
+                <th> Actions </th>
+                <th> Note </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.get_date() }}</td>
+                <td>{{ record.description }}</td>
+                <td>{{ record.get_extent_translations() | join(',') }}</td>
+                <td>{{ record.note }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

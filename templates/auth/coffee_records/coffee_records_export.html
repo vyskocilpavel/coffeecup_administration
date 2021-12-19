@@ -1,0 +1,23 @@
+{% extends "base_export.html" %}
+
+{% block content %}
+    <h1>All Coffee records - {{ month }}/{{ year }}</h1>
+    <h2></h2>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th> Date </th>
+                <th> Name </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.date }}</td>
+                <td>{{ record.user_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

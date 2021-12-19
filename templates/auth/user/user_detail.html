@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <h1>User detail</h1>
+    {{ wtf.quick_form(form) }}
+    <a class="btn btn-primary width-100 mt-5" href={{ url_for('auth_user_edit', id=user.id)  }}>Edit</a>
+
+    <h2 class="mt-5">List of User's coffee records</h2>
+    {{ table }}
+{% endblock %}

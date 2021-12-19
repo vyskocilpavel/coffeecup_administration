@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <h1>List of all Coffee records</h1>
+
+    {{ wtf.quick_form(month_form, id="month_filter_form", button_map={'submit': 'primary', 'export': 'primary'}) }}
+
+    {{ table }}
+
+{% endblock %}
